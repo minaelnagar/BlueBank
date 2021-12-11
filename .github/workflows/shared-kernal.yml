@@ -27,7 +27,7 @@ jobs:
         dotnet-version: 5.0.x
         source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
       env:
-        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
     - name: Install dependencies
       run: dotnet restore
       working-directory: ./src/BlueBank/BlueBank.SharedKernel
@@ -42,4 +42,4 @@ jobs:
     - name: PushGithub
       run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
       env:
-        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
