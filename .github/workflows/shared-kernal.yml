@@ -39,4 +39,4 @@ jobs:
     - name: PushGithub
       run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
       env:
-        NUGET_AUTH_TOKEN: ${{secrets.NUGET_API_KEY}}
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
