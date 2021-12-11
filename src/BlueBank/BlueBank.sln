@@ -10,6 +10,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.SharedKernel", "BlueBank.SharedKernel\BlueBank.SharedKernel.csproj", "{320BB293-3F5A-4ACF-97E9-32E71C01431C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{ADFA7A60-6BBF-4324-B791-7F90DE9AB6F5}"
+	ProjectSection(SolutionItems) = preProject
+		nuget.config = nuget.config
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

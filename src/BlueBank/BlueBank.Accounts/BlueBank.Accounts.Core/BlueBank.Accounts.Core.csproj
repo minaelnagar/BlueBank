@@ -9,4 +9,8 @@
     <Folder Include="CustomerAggregates\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="BlueBank.SharedKernel" Version="1.0.0" />
+  </ItemGroup>
+
 </Project>
