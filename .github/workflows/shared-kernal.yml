@@ -25,7 +25,7 @@ jobs:
         dotnet-version: 5.0.x
     - name: Install dependencies
       run: dotnet restore
-	  working-directory: ./src/BlueBank/BlueBank.SharedKernel
+      working-directory: ./src/BlueBank/BlueBank.SharedKernel
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Publish BlueBank.SharedKernel
