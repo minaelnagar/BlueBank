@@ -5,12 +5,12 @@ on:
   push:
     branches: [ main ]
     paths:
-    - src/BlueBank/**
+    - src/BlueBank/BlueBank.SharedKernel/**
     - .github/workflows/shared-kernal.yml
   pull_request:
     branches: [ main ]
     paths:
-    - src/BlueBank/**
+    - src/BlueBank/BlueBank.SharedKernel/**
     - .github/workflows/shared-kernal.yml
 
 jobs:
