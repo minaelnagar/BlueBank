@@ -1,5 +1,5 @@
 ﻿using BlueBank.Accounts.Core.CustomerAggregates;
-using BlueBank.SharedKernel;
+using BlueBank.SharedKernel.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;

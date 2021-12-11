@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using BlueBank.Accounts.Core.CustomerAggregates;
 using BlueBank.Accounts.Infrastructure.Data;
-using BlueBank.SharedKernel.Interfaces;
+using BlueBank.SharedKernel.Data.Interfaces;
 using MediatR;
 using MediatR.Pipeline;
 using System.Collections.Generic;

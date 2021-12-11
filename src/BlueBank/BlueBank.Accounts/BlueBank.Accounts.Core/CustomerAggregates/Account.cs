@@ -1,4 +1,4 @@
-﻿using BlueBank.SharedKernel;
+﻿using BlueBank.SharedKernel.Data;
 using System;
 
 namespace BlueBank.Accounts.Core.CustomerAggregates

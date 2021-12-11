@@ -1,5 +1,5 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
-using BlueBank.SharedKernel.Interfaces;
+using BlueBank.SharedKernel.Data.Interfaces;
 
 namespace BlueBank.Accounts.Infrastructure.Data
 {

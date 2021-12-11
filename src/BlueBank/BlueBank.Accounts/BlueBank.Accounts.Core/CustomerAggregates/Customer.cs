@@ -1,6 +1,6 @@
 ﻿using Ardalis.GuardClauses;
-using BlueBank.SharedKernel;
-using BlueBank.SharedKernel.Interfaces;
+using BlueBank.SharedKernel.Data;
+using BlueBank.SharedKernel.Data.Interfaces;
 using System;
 using System.Collections.Generic;
 
