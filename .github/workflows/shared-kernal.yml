@@ -1,4 +1,4 @@
-name: Publish Packages
+name: Publish Shared Kernel
 
 on:
   workflow_dispatch:
@@ -15,21 +15,31 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup .NET Core
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
+        source-url: https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
     - name: Install dependencies
       run: dotnet restore
       working-directory: ./src/BlueBank/BlueBank.SharedKernel
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    - name: Publish BlueBank.SharedKernel
-      uses: brandedoutcast/publish-nuget@v2.5.2
-      with:
-          PROJECT_FILE_PATH: src/BlueBank/BlueBank.SharedKernel/BlueBank.SharedKernel.csproj
-          NUGET_KEY: ${{secrets.NUGET_API_KEY}}
+      working-directory: ./src/BlueBank/BlueBank.SharedKernel
+    - name: Test
+      run: dotnet test --no-restore --verbosity normal
+      working-directory: ./src/BlueBank/BlueBank.SharedKernel
+    - name: Pack
+      run: dotnet pack --no-build --configuration Release src/BlueBank/BlueBank.SharedKernel/BlueBank.SharedKernel.csproj --output .
+    - name: PushGithub
+      run: dotnet nuget push *.nupkg --no-symbols --skip-duplicate
+      env:
+        NUGET_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
