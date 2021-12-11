@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace BlueBank.SharedKernel
+namespace BlueBank.SharedKernel.Data
 {
     // source: https://github.com/jhewlett/ValueObject
     [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field)]

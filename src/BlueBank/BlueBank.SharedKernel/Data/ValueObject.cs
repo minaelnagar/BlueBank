@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace BlueBank.SharedKernel
+namespace BlueBank.SharedKernel.Data
 {
     public abstract class ValueObject : IEquatable<ValueObject>
     {

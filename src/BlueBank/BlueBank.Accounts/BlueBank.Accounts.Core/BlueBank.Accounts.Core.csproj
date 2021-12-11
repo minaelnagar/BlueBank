@@ -5,11 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AccountAggregates\" />
-    <Folder Include="CustomerAggregates\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />
+    <PackageReference Include="Autofac" Version="6.3.0" />
     <PackageReference Include="BlueBank.SharedKernel" Version="1.0.0" />
   </ItemGroup>
 

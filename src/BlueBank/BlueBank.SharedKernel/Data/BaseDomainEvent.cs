@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using System;
 
-namespace BlueBank.SharedKernel
+namespace BlueBank.SharedKernel.Data
 {
     public abstract class BaseDomainEvent : INotification
     {
