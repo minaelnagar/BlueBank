@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31911.196
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlueBank.Accounts", "BlueBank.Accounts", "{64D2236C-9603-4F9A-826C-72CA634B247B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBank.Accounts.Core", "BlueBank.Accounts\BlueBank.Accounts.Core\BlueBank.Accounts.Core.csproj", "{A5A3DA77-0222-4B8A-89D7-12EF9BB3C4C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Accounts.Core", "BlueBank.Accounts\BlueBank.Accounts.Core\BlueBank.Accounts.Core.csproj", "{A5A3DA77-0222-4B8A-89D7-12EF9BB3C4C8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBank.SharedKernel", "BlueBank.SharedKernel\BlueBank.SharedKernel.csproj", "{320BB293-3F5A-4ACF-97E9-32E71C01431C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.SharedKernel", "BlueBank.SharedKernel\BlueBank.SharedKernel.csproj", "{320BB293-3F5A-4ACF-97E9-32E71C01431C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{ADFA7A60-6BBF-4324-B791-7F90DE9AB6F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
