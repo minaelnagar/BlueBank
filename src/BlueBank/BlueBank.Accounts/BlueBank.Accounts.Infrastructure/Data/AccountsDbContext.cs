@@ -1,9 +1,9 @@
-﻿using BlueBank.Accounts.Core.CustomerAggregates;
+﻿using Ardalis.EFCore.Extensions;
+using BlueBank.Accounts.Core.CustomerAggregates;
 using BlueBank.SharedKernel.Data;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
-using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -25,7 +25,7 @@ namespace BlueBank.Accounts.Infrastructure.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
-            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.ApplyAllConfigurationsFromCurrentAssembly();
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())

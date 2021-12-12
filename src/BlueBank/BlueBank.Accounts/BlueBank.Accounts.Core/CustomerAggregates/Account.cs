@@ -1,5 +1,4 @@
 ﻿using BlueBank.SharedKernel.Data;
-using System;
 
 namespace BlueBank.Accounts.Core.CustomerAggregates
 {
@@ -8,10 +7,8 @@ namespace BlueBank.Accounts.Core.CustomerAggregates
         public Account(AccountType type)
         {
             Type = type;
-            CreationDate = DateTime.UtcNow;
         }
 
         public AccountType Type { get; private set; }
-        public DateTime CreationDate { get; private set; }
     }
 }

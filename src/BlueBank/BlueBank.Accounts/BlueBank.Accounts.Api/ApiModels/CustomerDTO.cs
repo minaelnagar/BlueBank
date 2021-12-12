@@ -8,6 +8,6 @@ namespace BlueBank.Accounts.Api.ApiModels
         public int Id { get; set; }
         public string Name { get; set; }
         public string Surename { get; set; }
-        public List<Account> Accounts { get; set; } = new();
+        public IEnumerable<Account> Accounts { get; set; } = new List<Account>();
     }
 }

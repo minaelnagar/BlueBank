@@ -1,7 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 using BlueBank.SharedKernel.Data;
 using BlueBank.SharedKernel.Data.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace BlueBank.Accounts.Core.CustomerAggregates
@@ -13,19 +12,17 @@ namespace BlueBank.Accounts.Core.CustomerAggregates
         {
             Name = Guard.Against.NullOrEmpty(name, nameof(name));
             Surename = Guard.Against.NullOrEmpty(surename, nameof(surename));
-            CreationDate = DateTime.UtcNow;
         }
 
         public string Name { get; private set; }
         public string Surename { get; private set; }
-        public DateTime CreationDate { get; private set; }
 
-        private List<Account> _acounts = new List<Account>();
-        public IEnumerable<Account> Accounts => _acounts.AsReadOnly();
+        private List<Account> _accounts = new List<Account>();
+        public IEnumerable<Account> Accounts => _accounts.AsReadOnly();
 
         public void AddAccount(Account newAccount)
         {
-            _acounts.Add(newAccount);
+            _accounts.Add(newAccount);
 
             //var newItemAddedEvent = new NewItemAddedEvent(this, newItem);
             //Events.Add(newItemAddedEvent);
