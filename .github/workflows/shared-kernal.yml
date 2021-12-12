@@ -47,7 +47,7 @@ jobs:
           
       # Publish the package to Azure Artifacts
       - name: 'dotnet publish'
-        run: dotnet nuget push bin/Release/*.nupkg -k ${{ secrets.AZURE_FEED_PAT }} 
+        run: dotnet nuget push bin/Release/*.nupkg -s "publicfeed"
         env:
           NUGET_AUTH_TOKEN: ${{ secrets.AZURE_FEED_PAT }} # Setup the .NET Core SDK with the appropriate auth token to access the GitHub Package Registry
 
