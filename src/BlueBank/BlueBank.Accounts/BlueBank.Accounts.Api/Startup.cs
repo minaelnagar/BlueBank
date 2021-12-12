@@ -30,7 +30,7 @@ namespace BlueBank.Accounts.Api
         {
             services.AddAutoMapper(typeof(MappingProfileConfiguration));
 
-            services.AddInMemoryDbContext("BlueBank");
+            services.AddInMemoryDbContext("BlueBankAccounts");
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -44,6 +44,7 @@ namespace BlueBank.Accounts.Api
         {
             builder.RegisterModule(new DefaultCoreModule());
             builder.RegisterModule(new DefaultInfrastructureModule(_env.IsDevelopment() || _env.IsEnvironment("Testing")));
+            builder.RegisterModule(new DefaultApiModule());
         }
 
 

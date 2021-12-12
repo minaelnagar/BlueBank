@@ -24,11 +24,15 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlueBank.ApiGateway", "BlueBank.ApiGateway", "{C206930F-7714-4687-803D-1BC5B445C230}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBank.ApiGateway", "BlueBank.ApiGateway\BlueBank.ApiGateway.csproj", "{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.ApiGateway", "BlueBank.ApiGateway\BlueBank.ApiGateway.csproj", "{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlueBank.Transactions", "BlueBank.Transactions", "{9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBank.Transactions.Core", "BlueBank.Transactions\BlueBank.Transactions.Core\BlueBank.Transactions.Core.csproj", "{2C1EC057-8653-432A-A018-5CA38A5C51CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Transactions.Core", "BlueBank.Transactions\BlueBank.Transactions.Core\BlueBank.Transactions.Core.csproj", "{2C1EC057-8653-432A-A018-5CA38A5C51CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBank.Transactions.Infrastructure", "BlueBank.Transactions\BlueBank.Transactions.Infrastructure\BlueBank.Transactions.Infrastructure.csproj", "{90F5ADAB-8BE4-4F16-8562-1EA17410852B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Transactions.Api", "BlueBank.Transactions\BlueBank.Transactions.Api\BlueBank.Transactions.Api.csproj", "{AFC32880-ACF8-4FDF-BDA3-825BA888804F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -68,6 +72,14 @@ Global
 		{2C1EC057-8653-432A-A018-5CA38A5C51CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2C1EC057-8653-432A-A018-5CA38A5C51CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2C1EC057-8653-432A-A018-5CA38A5C51CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{90F5ADAB-8BE4-4F16-8562-1EA17410852B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{90F5ADAB-8BE4-4F16-8562-1EA17410852B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{90F5ADAB-8BE4-4F16-8562-1EA17410852B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{90F5ADAB-8BE4-4F16-8562-1EA17410852B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -78,6 +90,8 @@ Global
 		{356BA575-DA6A-43C6-9DD2-4D94346CC5E9} = {64D2236C-9603-4F9A-826C-72CA634B247B}
 		{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04} = {C206930F-7714-4687-803D-1BC5B445C230}
 		{2C1EC057-8653-432A-A018-5CA38A5C51CA} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
+		{90F5ADAB-8BE4-4F16-8562-1EA17410852B} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
+		{AFC32880-ACF8-4FDF-BDA3-825BA888804F} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF3BD19F-F559-4ACB-AA9F-B61482B92828}

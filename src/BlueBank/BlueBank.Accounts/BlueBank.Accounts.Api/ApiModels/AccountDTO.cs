@@ -1,8 +1,14 @@
-﻿namespace BlueBank.Accounts.Api.ApiModels
+﻿using BlueBank.Accounts.Core.CustomerAggregates;
+using System.Collections.Generic;
+
+namespace BlueBank.Accounts.Api.ApiModels
 {
-    public class CreateAccountDTO
+    public class AccountDTO
     {
-        public int CustomerId { get; set; }
-        public decimal InitialCredit { get; set; }
+        public int Id { get; set; }
+        public AccountType Type { get; set; }
+
+        public decimal Balance { get; set; }
+        public IEnumerable<TransactionDTO> Transactions { get; set; } = new List<TransactionDTO>();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Ardalis.GuardClauses;
+using BlueBank.Accounts.Core.CustomerAggregates.Events;
 using BlueBank.SharedKernel.Data;
 using BlueBank.SharedKernel.Data.Interfaces;
 using System.Collections.Generic;
@@ -20,12 +21,12 @@ namespace BlueBank.Accounts.Core.CustomerAggregates
         private List<Account> _accounts = new List<Account>();
         public IEnumerable<Account> Accounts => _accounts.AsReadOnly();
 
-        public void AddAccount(Account newAccount)
+        public void AddAccount(Account newAccount, decimal initialCredit)
         {
             _accounts.Add(newAccount);
 
-            //var newItemAddedEvent = new NewItemAddedEvent(this, newItem);
-            //Events.Add(newItemAddedEvent);
+            var accountCreatedEvent = new AccountCreatedEvent(newAccount, initialCredit);
+            Events.Add(accountCreatedEvent);
         }
     }
 }

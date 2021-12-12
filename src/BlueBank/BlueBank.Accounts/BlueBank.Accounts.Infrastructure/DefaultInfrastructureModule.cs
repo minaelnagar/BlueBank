@@ -1,6 +1,8 @@
 ﻿using Autofac;
 using BlueBank.Accounts.Core.CustomerAggregates;
+using BlueBank.Accounts.Core.Interfaces;
 using BlueBank.Accounts.Infrastructure.Data;
+using BlueBank.Accounts.Infrastructure.ExternalClients;
 using BlueBank.SharedKernel.Data.Interfaces;
 using MediatR;
 using MediatR.Pipeline;
@@ -18,7 +20,7 @@ namespace BlueBank.Accounts.Infrastructure
         public DefaultInfrastructureModule(bool isDevelopment, Assembly callingAssembly = null)
         {
             _isDevelopment = isDevelopment;
-            var coreAssembly = Assembly.GetAssembly(typeof(Account)); // TODO: Replace "Project" with any type from your Core project
+            var coreAssembly = Assembly.GetAssembly(typeof(Account));
             var infrastructureAssembly = Assembly.GetAssembly(typeof(StartupSetup));
             _assemblies.Add(coreAssembly);
             _assemblies.Add(infrastructureAssembly);
@@ -51,6 +53,11 @@ namespace BlueBank.Accounts.Infrastructure
             builder
                 .RegisterType<Mediator>()
                 .As<IMediator>()
+                .InstancePerLifetimeScope();
+
+            builder
+                .RegisterType<TransactionServiceClient>()
+                .As<ITransactionServiceClient>()
                 .InstancePerLifetimeScope();
 
             builder.Register<ServiceFactory>(context =>

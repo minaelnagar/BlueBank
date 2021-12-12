@@ -30,7 +30,7 @@ namespace BlueBank.Accounts.Api
 
         public static void PopulateTestData(AccountsDbContext dbContext)
         {
-            Customer1.AddAccount(Account1);
+            Customer1.AddAccount(Account1, 0);
             dbContext.Customers.Add(Customer1);
             dbContext.Customers.Add(Customer2);
 

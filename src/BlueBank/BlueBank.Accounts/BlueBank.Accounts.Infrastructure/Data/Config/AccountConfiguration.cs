@@ -8,6 +8,8 @@ namespace BlueBank.Accounts.Infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<Account> builder)
         {
+            builder.Ignore(t => t.Balance);
+            builder.Ignore(t => t.Transactions);
         }
     }
 }

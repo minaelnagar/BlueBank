@@ -1,8 +1,6 @@
-﻿using Ardalis.Specification;
-using AutoMapper;
+﻿using AutoMapper;
 using BlueBank.Accounts.Api.ApiModels;
-using BlueBank.Accounts.Core.CustomerAggregates;
-using BlueBank.SharedKernel.Data.Interfaces;
+using BlueBank.Accounts.Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -11,33 +9,33 @@ namespace BlueBank.Accounts.Api.Controllers
 {
     public class CustomersController : BaseApiController
     {
-        private readonly IReadRepository<Customer> _repository;
+        private readonly IAccountService _accountService;
+
         private readonly IMapper _mapper;
 
-        public CustomersController(IReadRepository<Customer> repository, IMapper mapper)
+        public CustomersController(IAccountService accountService, IMapper mapper)
         {
-            _repository = repository;
+            _accountService = accountService;
             _mapper = mapper;
         }
 
+        [Route("{id}")]
+        [HttpGet]
+        public async Task<IActionResult> Get(int id)
+        {
+            var customer = await _accountService.Get(id, true);
+            var customerDTO = _mapper.Map<CustomerDTO>(customer);
 
-        // GET: api/Customers
+            return Ok(customerDTO);
+        }
+
         [HttpGet]
         public async Task<IActionResult> List()
         {
-            var projects = await _repository.ListAsync(new CustomerWithAccountsSpecification());
-            var projectDTOs = _mapper.Map<List<CustomerDTO>>(projects);
+            var customers = await _accountService.List(true);
+            var customersDTO = _mapper.Map<List<CustomerDTO>>(customers);
 
-            return Ok(projectDTOs);
-        }
-    }
-
-    public class CustomerWithAccountsSpecification : Specification<Customer>
-    {
-        public CustomerWithAccountsSpecification()
-        {
-            Query
-                .Include(customer => customer.Accounts);
+            return Ok(customersDTO);
         }
     }
 }

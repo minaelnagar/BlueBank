@@ -17,6 +17,7 @@ namespace BlueBank.Accounts.Api.Configurations
         {
             CreateMap<Customer, CustomerDTO>().ReverseMap();
             CreateMap<Account, AccountDTO>().ReverseMap();
+            CreateMap<Transaction, TransactionDTO>().ReverseMap();
         }
     }
 }
