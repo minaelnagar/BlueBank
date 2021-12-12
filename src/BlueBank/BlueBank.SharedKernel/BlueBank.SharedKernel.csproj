@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
@@ -8,8 +8,8 @@
         <PackageTags>shared kernel</PackageTags>
         <Title>SharedKernel</Title>
         <Description>Shared kernal nuget package for blue bank project</Description>
-        <PackageVersion>1.0.2</PackageVersion>
-        <Version>1.0.2</Version>
+        <PackageVersion>1.0.3</PackageVersion>
+        <Version>1.0.3</Version>
         <RepositoryUrl>https://github.com/minaelnagar/BlueBank</RepositoryUrl>
         <RepositoryType>git</RepositoryType>
     </PropertyGroup>

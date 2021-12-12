@@ -1,6 +1,9 @@
-﻿using BlueBank.Accounts.Core.CustomerAggregates;
+﻿using Ardalis.GuardClauses;
+using BlueBank.Accounts.Core.CustomerAggregates;
+using BlueBank.Accounts.Core.CustomerAggregates.Specifications;
 using BlueBank.Accounts.Core.Interfaces;
 using BlueBank.SharedKernel.Data.Interfaces;
+using BlueBank.SharedKernel.Services;
 using System.Threading.Tasks;
 
 namespace BlueBank.Accounts.Core.Services
@@ -14,8 +17,21 @@ namespace BlueBank.Accounts.Core.Services
             _repository = repository;
         }
 
-        public Task<bool> OpenNewCurrentAccount(int customerId, decimal initialCredit)
+        public async Task<Result<bool>> OpenNewCurrentAccount(int customerId, decimal initialCredit)
         {
+            Guard.Against.NegativeOrZero(customerId, nameof(customerId));
+
+            var customer = await _repository.GetBySpecAsync(new CustomerByIdWithAccountsSpec(customerId));
+
+            if (customer != null)
+            {
+                Result
+            }
+            else
+            {
+                Result.Fail(BusinessError.CustomerNotFound)
+                return Result.
+            }
 
         }
     }

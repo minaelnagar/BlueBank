@@ -2,16 +2,38 @@
 {
     public class Result<T>
     {
-        public Result(T value)
+        private Result() { }
+
+        public static Result<T> Success()
         {
-            Value = value;
-            DidFail = false;
+            return new Result<T>()
+            {
+            };
         }
 
-        public Result(BusinessError error)
+        public static Result<T> Success(T value)
         {
-            Error = error;
-            DidFail = true;
+            return new Result<T>()
+            {
+                Value = value
+            };
+        }
+
+        public static Result<T> Fail()
+        {
+            return new Result<T>()
+            {
+                DidFail = true
+            };
+        }
+
+        public static Result<T> Fail(BusinessError error)
+        {
+            return new Result<T>()
+            {
+                DidFail = true,
+                Error = error
+            };
         }
 
         public bool DidFail { get; private set; }
