@@ -6,8 +6,10 @@
 
   <ItemGroup>
     <PackageReference Include="Ardalis.GuardClauses" Version="3.3.0" />
-    <PackageReference Include="Autofac" Version="6.3.0" />
-    <PackageReference Include="BlueBank.SharedKernel" Version="1.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BlueBank.SharedKernel\BlueBank.SharedKernel.csproj" />
   </ItemGroup>
 
 </Project>

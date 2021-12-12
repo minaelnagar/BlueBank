@@ -10,6 +10,7 @@ namespace BlueBank.Accounts.Api
     public static class SeedData
     {
         public static readonly Customer Customer1 = new Customer("Mina", "Elnagar");
+        public static readonly Customer Customer2 = new Customer("Tim", "Beek");
         public static readonly Account Account1 = new Account(AccountType.Current);
 
         public static void Initialize(IServiceProvider serviceProvider)
@@ -31,6 +32,7 @@ namespace BlueBank.Accounts.Api
         {
             Customer1.AddAccount(Account1);
             dbContext.Customers.Add(Customer1);
+            dbContext.Customers.Add(Customer2);
 
             dbContext.SaveChanges();
         }
