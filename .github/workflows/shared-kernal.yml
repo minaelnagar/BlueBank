@@ -14,7 +14,7 @@ on:
     - .github/workflows/shared-kernal.yml
 
 env:
-  AZURE_ARTIFACTS_FEED_URL: https://pkgs.dev.azure.com/minaelnagar/_packaging/minaelnagar/nuget/v3/index.json            # set this to the registry url for your Azure Artifacts Feed, you will find this in Azure DevOps
+  AZURE_ARTIFACTS_FEED_URL: https://minaelnagar.pkgs.visualstudio.com/BlueBank/_packaging/bluebank/nuget/v3/index.json            # set this to the registry url for your Azure Artifacts Feed, you will find this in Azure DevOps
   BUILD_CONFIGURATION: 'Release'                                                          # set this to the appropriate build configuration
   DOTNET_VERSION: '5.0.x'                                                                 # set this to the dot net version to use
 
