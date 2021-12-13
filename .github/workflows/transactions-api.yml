@@ -1,4 +1,4 @@
-name: Build and Test Transactions API.
+name:  Transactions API- Build, Test and Docker Image.
 
 on:
   workflow_dispatch:
@@ -50,4 +50,7 @@ jobs:
     - name: Functional Test
       run: dotnet test BlueBank.Transactions.Tests/BlueBank.Transactions.Tests.FunctionalTest/BlueBank.Transactions.Tests.FunctionalTest.csproj --no-build --verbosity normal
       working-directory: ./src/BlueBank/BlueBank.Transactions/
+    - name: Build the Docker image
+      run: docker build . --file BlueBank.Transactions/BlueBank.Transactions.Api/Dockerfile --tag bluebank-transaction-api:$(date +%s)
+      working-directory: ./src/BlueBank/
 
