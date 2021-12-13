@@ -70,7 +70,7 @@ namespace BlueBank.Accounts.Tests.UnitTests.Core.Services
 
             var result = await _accountService.OpenNewCurrentAccount(_initialCustomerId, _zeroInitialCredit);
 
-            Assert.NotEqual(_initialAccountsCount, _testCustomer.Accounts.Count());
+            Assert.Equal(_initialAccountsCount, _testCustomer.Accounts.Count());
         }
     }
 }
