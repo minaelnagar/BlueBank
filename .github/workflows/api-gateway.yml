@@ -1,4 +1,4 @@
-name: Build and Test Transactions API.
+name: API Gateway - Build and Create Docker Image.
 
 on:
   workflow_dispatch:
