@@ -1,4 +1,4 @@
-name: Build and Test Accounts API.
+name: Accounts API Build, Test and Docker Image.
 
 on:
   workflow_dispatch:
@@ -50,4 +50,7 @@ jobs:
     - name: Functional Test
       run: dotnet test BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.FunctionalTest/BlueBank.Accounts.Tests.FunctionalTest.csproj --no-build --verbosity normal
       working-directory: ./src/BlueBank/BlueBank.Accounts/
+    - name: Build the Docker image
+      run: docker build . --file BlueBank.Accounts/BlueBank.Accounts.Api/Dockerfile --tag bluebank-accounts-api:$(date +%s)
+      working-directory: ./src/BlueBank/
 
