@@ -1,0 +1,41 @@
+name: Build and Test
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+    - src/BlueBank/BlueBank.Accounts/**
+    - .github/workflows/accounts-api.yml
+  pull_request:
+    branches: [ main ]
+    paths:
+    - src/BlueBank/BlueBank.Accounts/**
+    - .github/workflows/accounts-api.yml
+
+defaults:
+   run:
+    working-directory: ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Api/
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Unit Test
+      run: dotnet test BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.UnitTests/BlueBank.Accounts.Tests.UnitTests.csproj --no-build --verbosity normal
+      working-directory: ./src/BlueBank/BlueBank.Accounts/
+    - name: Functional Test
+      run: dotnet test BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.FunctionalTest/BlueBank.Accounts.Tests.FunctionalTest.csproj --no-build --verbosity normal
+      working-directory: ./src/BlueBank/BlueBank.Accounts/
+
