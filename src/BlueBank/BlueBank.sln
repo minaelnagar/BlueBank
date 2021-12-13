@@ -20,8 +20,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Accounts.Api", "Bl
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.SharedApplication", "BlueBank.SharedApplication\BlueBank.SharedApplication.csproj", "{DF7E07B1-F198-444D-B35D-6AF109E45137}"
 EndProject
-Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{00954DB8-506F-4294-BADD-1480AEEA835F}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlueBank.ApiGateway", "BlueBank.ApiGateway", "{C206930F-7714-4687-803D-1BC5B445C230}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.ApiGateway", "BlueBank.ApiGateway\BlueBank.ApiGateway.csproj", "{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04}"
@@ -31,8 +29,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Transactions.Core", "BlueBank.Transactions\BlueBank.Transactions.Core\BlueBank.Transactions.Core.csproj", "{2C1EC057-8653-432A-A018-5CA38A5C51CA}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBank.Transactions.Infrastructure", "BlueBank.Transactions\BlueBank.Transactions.Infrastructure\BlueBank.Transactions.Infrastructure.csproj", "{90F5ADAB-8BE4-4F16-8562-1EA17410852B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Transactions.Api", "BlueBank.Transactions\BlueBank.Transactions.Api\BlueBank.Transactions.Api.csproj", "{AFC32880-ACF8-4FDF-BDA3-825BA888804F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BlueBank.Accounts.Tests", "BlueBank.Accounts.Tests", "{16BBF4AE-1ECB-4C08-970F-5231261750B6}"
 EndProject
@@ -45,6 +41,10 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Transactions.Tests.UnitTests", "BlueBank.Transactions\BlueBank.Transactions.Tests\BlueBank.Transactions.Tests.UnitTests\BlueBank.Transactions.Tests.UnitTests.csproj", "{837D7443-0DE1-48C2-B059-3C9128244EC7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlueBank.Transactions.Tests.FunctionalTest", "BlueBank.Transactions\BlueBank.Transactions.Tests\BlueBank.Transactions.Tests.FunctionalTest\BlueBank.Transactions.Tests.FunctionalTest.csproj", "{9FAE00D7-D691-4C6D-B88B-AB4A8E9A82F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueBank.Transactions.Api", "BlueBank.Transactions\BlueBank.Transactions.Api\BlueBank.Transactions.Api.csproj", "{ED69C54A-B2FD-4CEE-98E3-68BA49207A7D}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{AA1CFCFF-B1A9-43C8-945E-BEB5CF24E397}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -72,10 +72,6 @@ Global
 		{DF7E07B1-F198-444D-B35D-6AF109E45137}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF7E07B1-F198-444D-B35D-6AF109E45137}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF7E07B1-F198-444D-B35D-6AF109E45137}.Release|Any CPU.Build.0 = Release|Any CPU
-		{00954DB8-506F-4294-BADD-1480AEEA835F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{00954DB8-506F-4294-BADD-1480AEEA835F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{00954DB8-506F-4294-BADD-1480AEEA835F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{00954DB8-506F-4294-BADD-1480AEEA835F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -88,10 +84,6 @@ Global
 		{90F5ADAB-8BE4-4F16-8562-1EA17410852B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{90F5ADAB-8BE4-4F16-8562-1EA17410852B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{90F5ADAB-8BE4-4F16-8562-1EA17410852B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AFC32880-ACF8-4FDF-BDA3-825BA888804F}.Release|Any CPU.Build.0 = Release|Any CPU
 		{AA76BCFD-B4CD-4968-90D7-7FB64094C3EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{AA76BCFD-B4CD-4968-90D7-7FB64094C3EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AA76BCFD-B4CD-4968-90D7-7FB64094C3EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -108,6 +100,14 @@ Global
 		{9FAE00D7-D691-4C6D-B88B-AB4A8E9A82F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9FAE00D7-D691-4C6D-B88B-AB4A8E9A82F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9FAE00D7-D691-4C6D-B88B-AB4A8E9A82F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED69C54A-B2FD-4CEE-98E3-68BA49207A7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED69C54A-B2FD-4CEE-98E3-68BA49207A7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED69C54A-B2FD-4CEE-98E3-68BA49207A7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED69C54A-B2FD-4CEE-98E3-68BA49207A7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AA1CFCFF-B1A9-43C8-945E-BEB5CF24E397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AA1CFCFF-B1A9-43C8-945E-BEB5CF24E397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AA1CFCFF-B1A9-43C8-945E-BEB5CF24E397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AA1CFCFF-B1A9-43C8-945E-BEB5CF24E397}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -119,13 +119,13 @@ Global
 		{F94B8523-6AF1-44C6-BCBE-4572DDC7FB04} = {C206930F-7714-4687-803D-1BC5B445C230}
 		{2C1EC057-8653-432A-A018-5CA38A5C51CA} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
 		{90F5ADAB-8BE4-4F16-8562-1EA17410852B} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
-		{AFC32880-ACF8-4FDF-BDA3-825BA888804F} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
 		{16BBF4AE-1ECB-4C08-970F-5231261750B6} = {64D2236C-9603-4F9A-826C-72CA634B247B}
 		{AA76BCFD-B4CD-4968-90D7-7FB64094C3EF} = {16BBF4AE-1ECB-4C08-970F-5231261750B6}
 		{2EF90B37-0008-41B3-B232-883EDC898494} = {16BBF4AE-1ECB-4C08-970F-5231261750B6}
 		{083E92E4-D715-418E-9EA0-17542A990BDF} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
 		{837D7443-0DE1-48C2-B059-3C9128244EC7} = {083E92E4-D715-418E-9EA0-17542A990BDF}
 		{9FAE00D7-D691-4C6D-B88B-AB4A8E9A82F4} = {083E92E4-D715-418E-9EA0-17542A990BDF}
+		{ED69C54A-B2FD-4CEE-98E3-68BA49207A7D} = {9A16C5D2-F88B-4512-90DB-60DC4F5F7E14}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AF3BD19F-F559-4ACB-AA9F-B61482B92828}

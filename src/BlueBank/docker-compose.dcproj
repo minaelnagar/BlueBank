@@ -3,7 +3,7 @@
   <PropertyGroup Label="Globals">
     <ProjectVersion>2.1</ProjectVersion>
     <DockerTargetOS>Linux</DockerTargetOS>
-    <ProjectGuid>00954db8-506f-4294-badd-1480aeea835f</ProjectGuid>
+    <ProjectGuid>aa1cfcff-b1a9-43c8-945e-beb5cf24e397</ProjectGuid>
     <DockerLaunchAction>LaunchBrowser</DockerLaunchAction>
     <DockerServiceUrl>{Scheme}://localhost:{ServicePort}/swagger</DockerServiceUrl>
     <DockerServiceName>bluebank.accounts.api</DockerServiceName>

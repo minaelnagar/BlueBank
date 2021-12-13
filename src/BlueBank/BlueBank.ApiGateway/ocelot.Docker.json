@@ -1,0 +1,64 @@
+{
+    "Routes": [
+        {
+            "UpstreamPathTemplate": "/accountsservice/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+            "DownstreamPathTemplate": "/api/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "host.docker.internal",
+                    "Port": 5005
+                }
+            ],
+            "SwaggerKey": "accounts",
+            "QoSOptions": {
+                "TimeoutValue": 300000
+            }
+        },
+        {
+            "UpstreamPathTemplate": "/transactionsservice/{everything}",
+            "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete", "Options" ],
+            "DownstreamPathTemplate": "/api/{everything}",
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "host.docker.internal",
+                    "Port": 6005
+                }
+            ],
+            "SwaggerKey": "transactions",
+            "QoSOptions": {
+                "TimeoutValue": 300000
+            }
+        }
+    ],
+
+    "SwaggerEndPoints": [
+        {
+            "Key": "accounts",
+            "Config": [
+                {
+                    "Name": "Acounts API",
+                    "Version": "v1",
+                    "Url": "http://host.docker.internal:5005/swagger/v1/swagger.json"
+                }
+            ]
+        },
+        {
+            "Key": "transactions",
+            "Config": [
+                {
+                    "Name": "Transactions API",
+                    "Version": "v1",
+                    "Url": "http://host.docker.internal:6005/swagger/v1/swagger.json"
+                }
+            ]
+        }
+    ],
+
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:7005",
+        "RequestIdKey": "OcRequestId"
+    }
+}

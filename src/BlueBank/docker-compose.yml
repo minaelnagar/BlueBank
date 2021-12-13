@@ -7,8 +7,16 @@ services:
       context: .
       dockerfile: BlueBank.Accounts/BlueBank.Accounts.Api/Dockerfile
 
+  bluebank.transactions.api:
+    image: ${DOCKER_REGISTRY-}bluebanktransactionsapi
+    build:
+      context: .
+      dockerfile: BlueBank.Transactions/BlueBank.Transactions.Api/Dockerfile
+
+
   bluebank.apigateway:
     image: ${DOCKER_REGISTRY-}bluebankapigateway
     build:
       context: .
       dockerfile: BlueBank.ApiGateway/Dockerfile
+

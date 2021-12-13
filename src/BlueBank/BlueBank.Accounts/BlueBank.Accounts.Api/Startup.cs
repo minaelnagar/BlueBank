@@ -43,7 +43,7 @@ namespace BlueBank.Accounts.Api
         public void ConfigureContainer(ContainerBuilder builder)
         {
             builder.RegisterModule(new DefaultCoreModule());
-            builder.RegisterModule(new DefaultInfrastructureModule(_env.IsDevelopment() || _env.IsEnvironment("Testing")));
+            builder.RegisterModule(new DefaultInfrastructureModule(_env.IsDevelopment() || _env.IsEnvironment("Docker")));
             builder.RegisterModule(new DefaultApiModule());
         }
 
@@ -58,7 +58,7 @@ namespace BlueBank.Accounts.Api
             });
 
 
-            if (env.IsDevelopment() || _env.IsEnvironment("Testing"))
+            if (env.IsDevelopment() || _env.IsEnvironment("Docker"))
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
