@@ -21,12 +21,21 @@ namespace BlueBank.Accounts.Api.Controllers
         // GET: api/Accounts
         [Route("{id}")]
         [HttpGet]
-        public async Task<IActionResult> List(int id)
+        public async Task<IActionResult> Get(int id)
         {
             var account = await _accountService.GetAccount(id);
-            var projectDTOs = _mapper.Map<AccountDTO>(account);
 
-            return Ok(projectDTOs);
+            if (account != null)
+            {
+
+                var projectDTOs = _mapper.Map<AccountDTO>(account);
+                return Ok(projectDTOs);
+            }
+            else
+            {
+                return NotFound();
+            }
+
         }
     }
 

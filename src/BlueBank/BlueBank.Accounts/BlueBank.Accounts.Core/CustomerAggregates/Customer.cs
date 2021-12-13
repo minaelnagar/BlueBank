@@ -23,6 +23,8 @@ namespace BlueBank.Accounts.Core.CustomerAggregates
 
         public void AddAccount(Account newAccount, decimal initialCredit)
         {
+            Guard.Against.Null(newAccount, nameof(newAccount));
+
             _accounts.Add(newAccount);
 
             var accountCreatedEvent = new AccountCreatedEvent(newAccount, initialCredit);

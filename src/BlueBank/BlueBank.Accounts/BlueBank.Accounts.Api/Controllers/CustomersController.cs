@@ -24,9 +24,17 @@ namespace BlueBank.Accounts.Api.Controllers
         public async Task<IActionResult> Get(int id)
         {
             var customer = await _accountService.Get(id, true);
-            var customerDTO = _mapper.Map<CustomerDTO>(customer);
 
-            return Ok(customerDTO);
+            if (customer != null)
+            {
+                var customerDTO = _mapper.Map<CustomerDTO>(customer);
+                return Ok(customerDTO);
+            }
+            else
+            {
+                return NotFound();
+            }
+
         }
 
         [HttpGet]
