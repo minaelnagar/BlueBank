@@ -1,0 +1,53 @@
+name: Build and Test Transactions API.
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+    - src/BlueBank/BlueBank.Transactions/**
+    - .github/workflows/transactions-api.yml
+  pull_request:
+    branches: [ main ]
+    paths:
+    - src/BlueBank/BlueBank.Transactions/**
+    - .github/workflows/transactions-api.yml
+
+defaults:
+   run:
+    working-directory: ./src/BlueBank/BlueBank.Transactions/BlueBank.Transactions.Api/
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet build --no-restore
+    - name: Restore Unit Test dependencies
+      run: dotnet restore
+      working-directory: ./src/BlueBank/BlueBank.Transactions/BlueBank.Transactions.Tests/BlueBank.Transactions.Tests.UnitTests
+    - name: Build Unit Test dependencies
+      run: dotnet build --no-restore
+      working-directory: ./src/BlueBank/BlueBank.Transactions/BlueBank.Transactions.Tests/BlueBank.Transactions.Tests.UnitTests
+    - name: Unit Test
+      run: dotnet test BlueBank.Transactions.Tests/BlueBank.Transactions.Tests.UnitTests/BlueBank.Transactions.Tests.UnitTests.csproj  --no-build --verbosity normal
+      working-directory: ./src/BlueBank/BlueBank.Transactions/
+    - name: Restore Funcational Test dependencies
+      run: dotnet restore
+      working-directory: ./src/BlueBank/BlueBank.Transactions/BlueBank.Transactions.Tests/BlueBank.Transactions.Tests.FunctionalTest
+    - name: Build Funcational Test dependencies
+      run: dotnet build --no-restore
+      working-directory: ./src/BlueBank/BlueBank.Transactions/BlueBank.Transactions.Tests/BlueBank.Transactions.Tests.FunctionalTest
+    - name: Functional Test
+      run: dotnet test BlueBank.Transactions.Tests/BlueBank.Transactions.Tests.FunctionalTest/BlueBank.Transactions.Tests.FunctionalTest.csproj --no-build --verbosity normal
+      working-directory: ./src/BlueBank/BlueBank.Transactions/
+
