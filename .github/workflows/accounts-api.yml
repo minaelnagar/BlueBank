@@ -43,10 +43,10 @@ jobs:
       working-directory: ./src/BlueBank/BlueBank.Accounts/
     - name: Restore Funcational Test dependencies
       run: dotnet restore
-      working-directory: ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Tests/BlueBank.Accounts.FunctionalTest/BlueBank.Accounts.Tests.FunctionalTest
+      working-directory: ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.FunctionalTest
     - name: Build Funcational Test dependencies
       run: dotnet build --no-restore
-      working-directory: ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Tests/BlueBank.Accounts.FunctionalTest/BlueBank.Accounts.Tests.FunctionalTest
+      working-directory: ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.FunctionalTest
     - name: Functional Test
       run: dotnet test BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.FunctionalTest/BlueBank.Accounts.Tests.FunctionalTest.csproj --no-build --verbosity normal
       working-directory: ./src/BlueBank/BlueBank.Accounts/
