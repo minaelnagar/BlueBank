@@ -85,11 +85,11 @@ It a microservice for maintaining transactions and has the same architecture and
 It's an API gateway based on ocelot gateway to unify points of entry to the microservices.
 Ocelot is lightweight, fast, scalable and provides routing and authentication among many other features.
 
-#Github Actions
+# Github Actions
 The repository includes 5 GitHub actions. Two of the actions are used to publish the needed NuGet packages to azure DevOps public feed registry.
 The other three actions are used to build, test and push docker images to GitHub docker registry
 
-#Next Steps
+# Next Steps
 The next steps for this repo/project are
 - Implement Saga Orchestration to handle the communications between the APIs.
 - Implement simple client app.
