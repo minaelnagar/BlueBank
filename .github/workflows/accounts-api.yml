@@ -15,7 +15,7 @@ on:
 
 defaults:
    run:
-    working-directory: ./src/BlueBank/BlueBank.Accounts
+    working-directory: ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Api/
 
 jobs:
   build:
