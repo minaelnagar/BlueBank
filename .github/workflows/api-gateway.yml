@@ -33,4 +33,5 @@ jobs:
     - name: Build
       run: dotnet build --no-restore
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag bluebank-api:$(date +%s)
+      run: docker build . --file BlueBank.ApiGateway/Dockerfile --tag bluebank-api:$(date +%s)
+      working-directory: ./src/BlueBank/
