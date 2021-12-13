@@ -32,5 +32,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Unit Test
+      run: dotnet test ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.UnitTests/BlueBank.Accounts.Tests.UnitTests.csproj --no-build --verbosity normal
+    - name: Functional Test
+      run: dotnet test ./src/BlueBank/BlueBank.Accounts/BlueBank.Accounts.Tests/BlueBank.Accounts.Tests.FunctionalTest/BlueBank.Accounts.Tests.FunctionalTest.csproj --no-build --verbosity normal
+
